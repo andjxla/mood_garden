@@ -3,6 +3,30 @@
     <head>
         <title>Mood garden</title>
         <link rel="stylesheet" href="/style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single+Ink:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:wght@100&display=swap" rel="stylesheet">
     </head>
     <body>
         <h1> 🌱 Mood garden</h1>
+
+        <form id="mood-form">
+            <p>How are you feeling today?</p>
+            <button type="button" class="mood-btn" data-mood="great">☀️</button>
+            <button type="button" class="mood-btn" data-mood="good">😌</button>
+            <button type="button" class="mood-btn" data-mood="okay">😐</button>
+            <button type="button" class="mood-btn" data-mood="bad">😔</button>
+        </form>
+
+        <p id="streak-text">🔥 <%= @streak %> day streak </p>
+
+        <div id="garden">
+            <script>
+                window.initialStreak = <%= @streak %>;
+                window.initialMood = <%= (@entries.last && @entries.last["mood"]).to_json %>
+                </script>
+        </div>
+
+        <script src="/script.js"></script>
+    </body>
+</html>
