@@ -3,6 +3,9 @@ require "sinatra/reloader" if development?
 require "json"
 require "date"
 
+set :port, ENV.fetch("PORT", 4567)
+set :bind, "0.0.0.0"
+
 set :public_folder, "public"
 
 DATA_FILE = "data/entries.json"
