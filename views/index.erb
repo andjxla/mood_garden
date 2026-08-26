@@ -8,6 +8,14 @@
 <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single+Ink:wght@100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:wght@100&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div class="browser-window">
+            <div class="window-titlebar">
+                <span class="dot dot-red"></span>
+                <span class="dot dot-yellow"></span>
+                <span class="dot dot-green"></span>
+            </div>
+        
+        <div class="window-content">
         <h1> 🌱 Mood garden</h1>
 
         <form id="mood-form">
@@ -20,12 +28,14 @@
 
         <p id="streak-text">🔥 <%= @streak %> day streak </p>
 
-        <div id="garden">
-            <script>
+        <div id="garden"> </div>
+        </div>
+        </div>
+
+        <script>
                 window.initialStreak = <%= @streak %>;
                 window.initialMood = <%= (@entries.last && @entries.last["mood"]).to_json %>
                 </script>
-        </div>
 
         <script src="/script.js"></script>
     </body>
